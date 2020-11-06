@@ -22,14 +22,12 @@ export default {
 	name: 'Roman',
 	data() {
 		return {
-			// text: 'MDCCCCLXXXIIII'
-			// text: 'MCMLXXXIV'
 			text: year
 		}
 	},
 	computed: {
 		result() {
-			return (isRoman(this.text)) ? toRoman(this.text) : fromRoman(this.text);
+			return (isRoman(this.text)) ? fromRoman(this.text) : toRoman(this.text);
 		}
 	}
 }

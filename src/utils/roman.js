@@ -4,10 +4,10 @@ const
 ;
 
 export function isRoman(n) {
-	return (n && n.match(romanRegex));
+	return (typeof n === 'string' && n.match(romanRegex));
 }
 
-export function toRoman(n) {
+export function fromRoman(n) {
 	return n
 		.toUpperCase().split('')
 		.map(char => romanValues[char])
@@ -16,7 +16,7 @@ export function toRoman(n) {
 	;
 }
 
-export function fromRoman(n) {
+export function toRoman(n) {
 	let str = '';
 
 	Object.keys(romanValues).forEach(key => {
