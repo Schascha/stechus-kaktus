@@ -1,6 +1,6 @@
 # Stechus Kaktus – Romanizer
 
-[![Travis Status](https://travis-ci.com/Schascha/stechus-kaktus.svg?branch=master)](https://travis-ci.com/Schascha/stechus-kaktus)
+[![Travis Status](https://travis-ci.com/Schascha/stechus-kaktus.svg?branch=main)](https://travis-ci.com/Schascha/stechus-kaktus)
 
 > Just a simple romanizer
 
@@ -23,7 +23,7 @@ npm run build
 
 ### Lints and fixes files
 ```
-npm run lint
+npm test
 ```
 
 ## Bugs?
