@@ -4,6 +4,7 @@
 			type="text"
 			name="text"
 			autocomplete="off"
+			autofocus
 			v-model="text"
 			@input="onInput"
 		/>
@@ -29,7 +30,9 @@ export default {
 	},
 	methods: {
 		onInput() {
-			this.text = this.text.toUpperCase().replace(/[^MDCLXVI0-9]+/, '');
+			this.text = this.text.toUpperCase()
+				.replace(/[^MDCLXVI0-9]+/, '')
+				.substr(0, (this.text.match(/[0-9]{1,4}/)) ? 4 : 12);
 		}
 	},
 	computed: {
