@@ -5,5 +5,5 @@ module.exports = {
     "**/?(*.)+(spec|test).[jt]s?(x)"
   ],
   collectCoverage: true,
-  collectCoverageFrom: ['src/**/*.{vue,[jt]s?(x)}'],
+  collectCoverageFrom: ['src/*/*.{vue,[jt]s?(x)}'],
 }

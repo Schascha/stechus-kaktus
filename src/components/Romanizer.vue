@@ -5,9 +5,11 @@
 			name="text"
 			autocomplete="off"
 			v-model="text"
-			@input="text = text.toUpperCase().replace(/[^MDCLXVI0-9]+/, '')"
+			@input="onInput"
 		/>
-		<p :title="result">{{ result }}</p>
+		<p :title="result">
+			{{ result }}
+		</p>
 	</div>
 </template>
 
@@ -23,6 +25,11 @@ export default {
 	data() {
 		return {
 			text: year
+		}
+	},
+	methods: {
+		onInput() {
+			this.text = this.text.toUpperCase().replace(/[^MDCLXVI0-9]+/, '');
 		}
 	},
 	computed: {

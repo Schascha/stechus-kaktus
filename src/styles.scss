@@ -26,6 +26,7 @@ html {
 body {
 	margin: 0;
 	padding: 3rem 1rem;
+	width: 100%;
 	background-color: $color-base;
 	color: $color-text;
 	font-weight: normal;
@@ -67,8 +68,11 @@ h1 {
 	}
 
 	> * {
+		overflow: hidden;
 		margin: 0;
 		padding: 2rem 0;
+		white-space: nowrap;
+		text-overflow: ellipsis;
 	}
 
 	input {
@@ -83,10 +87,8 @@ h1 {
 	}
 
 	p {
-		overflow: hidden;
 		position: relative;
 		min-height: calc(1.5em + 4rem);
-		text-overflow: ellipsis;
 
 		&::before {
 			content: '';

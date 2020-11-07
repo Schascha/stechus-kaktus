@@ -23,7 +23,7 @@
 </template>
 
 <script>
-	import Romanizer from './components/Romanizer.vue'
+	import Romanizer from './components/Romanizer.vue';
 
 	export default {
 		name: 'App',
