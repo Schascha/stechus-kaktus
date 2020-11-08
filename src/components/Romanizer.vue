@@ -6,7 +6,6 @@
 			autocomplete="off"
 			autofocus
 			v-model="text"
-			@input="onInput"
 		/>
 		<p :title="result">
 			{{ result }}
@@ -28,16 +27,16 @@ export default {
 			text: year
 		}
 	},
-	methods: {
-		onInput() {
-			this.text = this.text.toUpperCase()
-				.replace(/[^MDCLXVI0-9]+/, '')
-				.substr(0, (this.text.match(/[0-9]{1,4}/)) ? 4 : 12);
-		}
-	},
 	computed: {
 		result() {
 			return (isRoman(this.text)) ? fromRoman(this.text) : toRoman(this.text);
+		}
+	},
+	watch: {
+		text(value) {
+			this.text = value.toUpperCase()
+				.replace(/[^MDCLXVI0-9]+/, '')
+				.substr(0, (this.text.match(/[0-9]{1,4}/)) ? 4 : 12);
 		}
 	}
 }

@@ -33,9 +33,17 @@ body {
 }
 
 header {
-	position: absolute;
-	top: 1rem;
-	left: 1rem;
+	h1 {
+		position: absolute;
+		top: 1rem;
+		left: 1rem;
+	}
+
+	svg {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+	}
 }
 
 footer {
@@ -43,12 +51,6 @@ footer {
 	position: absolute;
 	bottom: 1rem;
 	left: 50%;
-
-	svg {
-		width: 2rem;
-		height: 2rem;
-		fill: $color-text;
-	}
 }
 
 h1 {
@@ -56,15 +58,21 @@ h1 {
 	font-size: 1.5rem;
 }
 
+svg {
+	width: 2rem;
+	height: 2rem;
+	fill: $color-text;
+}
+
 .romanizer {
 	margin: 0 auto;
-	max-width: 640px;
+	max-width: 740px;
 	color: $color-brand;
-	font-size: 4rem;
+	font-size: 3rem;
 	text-align: center;
 
 	@media screen and (min-width: 37.5em) {
-		font-size: 6rem;
+		font-size: 4rem;
 	}
 
 	> * {
