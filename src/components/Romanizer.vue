@@ -6,6 +6,7 @@
 			autocomplete="off"
 			autofocus
 			v-model="text"
+			@input="onInput"
 		/>
 		<p :title="result">
 			{{ result }}
@@ -24,7 +25,37 @@ export default {
 	name: 'Roman',
 	data() {
 		return {
-			text: year
+			text: year,
+			word: null,
+			timer: null
+		}
+	},
+	mounted: function () {
+		this.typing();
+	},
+	methods: {
+		typing() {
+			const delta = Math.random() * 100;
+
+			if (this.word && this.word.length) {
+				this.text += this.word.shift();
+				this.timer = window.setTimeout(this.typing, 300 - delta);
+			} else {
+				this.timer = window.setTimeout(this.remove, 2000 - delta);
+			}
+		},
+		remove() {
+			if (this.text.length) {
+				this.text = this.text.slice(0, -1);
+				this.timer = window.setTimeout(this.remove, 50);
+			} else {
+				this.word = parseInt(Math.random() * year).toString().split('');
+				this.timer = window.setTimeout(this.typing, 50);
+			}
+		},
+		onInput() {
+			window.clearTimeout(this.timer);
+			// this.timer = window.setTimeout(this.typing, 8000);
 		}
 	},
 	computed: {
