@@ -5,6 +5,7 @@
 			name="text"
 			autocomplete="off"
 			autofocus
+			spellcheck="false"
 			v-model="text"
 			@input="onInput"
 		/>
@@ -16,13 +17,14 @@
 
 <script>
 import {fromRoman, isRoman, toRoman} from '../utils/roman';
+import {Typewriter} from '../utils/typewriter';
 
 const
 	year = new Date().getFullYear().toString()
 ;
 
 export default {
-	name: 'Roman',
+	name: 'Romanizer',
 	data() {
 		return {
 			text: year,
@@ -35,13 +37,11 @@ export default {
 	},
 	methods: {
 		typing() {
-			const delta = Math.random() * 100;
-
 			if (this.word && this.word.length) {
 				this.text += this.word.shift();
-				this.timer = window.setTimeout(this.typing, 300 - delta);
+				this.timer = window.setTimeout(this.typing, 300 - Math.random() * 100);
 			} else {
-				this.timer = window.setTimeout(this.remove, 2000 - delta);
+				this.timer = window.setTimeout(this.remove, 2000);
 			}
 		},
 		remove() {
@@ -49,13 +49,20 @@ export default {
 				this.text = this.text.slice(0, -1);
 				this.timer = window.setTimeout(this.remove, 50);
 			} else {
-				this.word = parseInt(Math.random() * year).toString().split('');
-				this.timer = window.setTimeout(this.typing, 50);
+				this.word = this.randomWord().split('');
+				this.timer = window.setTimeout(this.typing, 300 - Math.random() * 100);
 			}
+		},
+		randomWord() {
+			const str = parseInt(Math.random() * year).toString();
+			return (Math.round(Math.random())) ? toRoman(str) : str;
 		},
 		onInput() {
 			window.clearTimeout(this.timer);
-			// this.timer = window.setTimeout(this.typing, 8000);
+
+			if (!this.text.length) {
+				this.timer = window.setTimeout(this.typing, 8000);
+			}
 		}
 	},
 	computed: {
