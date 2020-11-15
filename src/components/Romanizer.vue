@@ -27,41 +27,25 @@ export default {
 	name: 'Romanizer',
 	data() {
 		return {
-			text: year,
-			word: null,
-			timer: null
+			text: year
 		}
 	},
 	mounted: function () {
-		this.typing();
+		this.typewriter = new Typewriter({
+			words: () => {
+				const str = parseInt(Math.random() * year).toString();
+				return (Math.round(Math.random())) ? toRoman(str) : str;
+			},
+			onType: (text) => this.text = text,
+			onRemove: (text) => this.text = text
+		}).typing();
 	},
 	methods: {
-		typing() {
-			if (this.word && this.word.length) {
-				this.text += this.word.shift();
-				this.timer = window.setTimeout(this.typing, 300 - Math.random() * 100);
-			} else {
-				this.timer = window.setTimeout(this.remove, 2000);
-			}
-		},
-		remove() {
-			if (this.text.length) {
-				this.text = this.text.slice(0, -1);
-				this.timer = window.setTimeout(this.remove, 50);
-			} else {
-				this.word = this.randomWord().split('');
-				this.timer = window.setTimeout(this.typing, 300 - Math.random() * 100);
-			}
-		},
-		randomWord() {
-			const str = parseInt(Math.random() * year).toString();
-			return (Math.round(Math.random())) ? toRoman(str) : str;
-		},
 		onInput() {
-			window.clearTimeout(this.timer);
+			this.typewriter.clear();
 
 			if (!this.text.length) {
-				this.timer = window.setTimeout(this.typing, 8000);
+				window.setTimeout(this.typewriter.typing, 8000);
 			}
 		}
 	},

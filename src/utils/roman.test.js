@@ -1,6 +1,6 @@
 import {isRoman, fromRoman, toRoman} from './roman';
 
-describe('The roman utils', () => {
+describe('The roman util', () => {
 
 	it('should check roman numerals', () => {
 		expect(isRoman('MCMLXXXIV')).toBeTruthy();

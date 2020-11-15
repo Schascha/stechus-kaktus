@@ -4,12 +4,14 @@ $color-brand: #c19a5b;
 $color-base: #f5efe1;
 $color-text: #22211f;
 
+html,
+body {
+	height: 100%;
+	min-height: 100%;
+}
+
 html {
 	box-sizing: border-box;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	min-height: 100%;
 	font-family: $font-family;
 	font-size: 16px;
 	line-height: 1.5;
@@ -24,26 +26,24 @@ html {
 }
 
 body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	margin: 0;
 	padding: 3rem 1rem;
-	width: 100%;
 	background-color: $color-base;
 	color: $color-text;
 	font-weight: normal;
 }
 
 header {
-	h1 {
-		position: absolute;
-		top: 1rem;
-		left: 1rem;
-	}
-
-	svg {
-		position: absolute;
-		top: 1rem;
-		right: 1rem;
-	}
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	left: 1rem;
 }
 
 footer {
