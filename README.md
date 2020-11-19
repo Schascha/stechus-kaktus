@@ -1,3 +1,5 @@
+![Logo](src/assets/logo.svg/?raw=true)
+
 # Stechus Kaktus – Romanizer
 
 [![Travis Status](https://travis-ci.com/Schascha/stechus-kaktus.svg?branch=main)](https://travis-ci.com/Schascha/stechus-kaktus)
