@@ -4,16 +4,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/stechus-kaktus/.htaccess"
   },
   {
-    "revision": "835c9b4ea247c9645a7b",
+    "revision": "a8ad4c9df99743b65b24",
     "url": "/stechus-kaktus/css/app.67feb39a.css"
   },
   {
-    "revision": "cbbd13da77a0cc1e10f3096e20d1050b",
+    "revision": "40d170f9a0c524b228aa97a7f69fae11",
     "url": "/stechus-kaktus/index.html"
   },
   {
-    "revision": "835c9b4ea247c9645a7b",
-    "url": "/stechus-kaktus/js/app.6cc8d833.js"
+    "revision": "a8ad4c9df99743b65b24",
+    "url": "/stechus-kaktus/js/app.05a5395b.js"
   },
   {
     "revision": "3c844a26845d830935f8",
