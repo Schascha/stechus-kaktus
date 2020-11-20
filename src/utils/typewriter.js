@@ -5,7 +5,8 @@ const
 		speedTyping: 300,
 		speedRemove: 50,
 		onType: null,
-		onRemove: null
+		onRemove: null,
+		onChange: null
 	}
 ;
 
@@ -25,9 +26,9 @@ export class Typewriter {
 		return Math.random() * 100;
 	}
 
-	typing = () => {
+	typing = (_delay) => {
 		const
-			{delta, word, options: {delay, speedTyping, onType}} = this
+			{delta, word, options: {delay, speedTyping, onChange, onType}} = this
 		;
 
 		if (word && word.length) {
@@ -35,7 +36,8 @@ export class Typewriter {
 			this._isFunction(onType) && onType(this.text);
 			this.timer = window.setTimeout(this.typing, speedTyping - delta);
 		} else {
-			this.timer = window.setTimeout(this.remove, delay);
+			this.text && this._isFunction(onChange) && onChange(this.text);
+			this.timer = window.setTimeout(this.remove, _delay || delay);
 		}
 
 		return this;

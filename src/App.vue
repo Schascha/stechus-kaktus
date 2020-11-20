@@ -13,7 +13,7 @@
 		</header>
 
 		<main>
-			<Romanizer />
+			<router-view/>
 		</main>
 
 		<footer>
@@ -32,14 +32,12 @@
 <script>
 	import IconGitHub from '@/assets/icons/github.svg?inline';
 	import IconWikipedia from '@/assets/icons/wikipedia.svg?inline';
-	import Romanizer from '@/components/Romanizer';
 
 	export default {
 		name: 'App',
 		components: {
 			IconGitHub,
-			IconWikipedia,
-			Romanizer
+			IconWikipedia
 		}
 	}
 </script>

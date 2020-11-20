@@ -30,6 +30,9 @@ export default {
 			text: year
 		}
 	},
+	props: [
+		'number'
+	],
 	mounted: function () {
 		this.typewriter = new Typewriter({
 			words: () => {
@@ -37,17 +40,42 @@ export default {
 				return (Math.round(Math.random())) ? toRoman(str) : str;
 			},
 			onType: (text) => this.text = text,
-			onRemove: (text) => this.text = text
-		}).typing();
+			onRemove: (text) => this.text = text,
+			// onChange: this.onChange
+		});
+
+		if (this.number) {
+			this.update(this.number);
+		} else {
+			this.typewriter.typing();
+		}
 	},
 	methods: {
+		update(value) {
+			this.text = this.validate(value);
+			(value !== this.text) && this.onChange();
+
+			if (!this.text) {
+				this.text = this.$data.text;
+				this.typewriter.typing();
+			}
+		},
+		validate(value) {
+			return (value.match(/^[0-9]+/)) ?
+				value.replace(/[^0-9]+/, '').substr(0, 4) :
+				value.toUpperCase().replace(/[^MDCLXVI]+/, '').substr(0, 12);
+		},
+		onChange() {
+			this.$router && this.$router.push(this.validate(this.text) || '/').catch(()=>{});
+		},
 		onInput() {
 			this.typewriter.clear();
+			this.onChange();
 
 			if (!this.text.length) {
-				window.setTimeout(this.typewriter.typing, 8000);
+				this.typewriter.typing(8000);
 			}
-		}
+		},
 	},
 	computed: {
 		result() {
@@ -56,9 +84,14 @@ export default {
 	},
 	watch: {
 		text(value) {
-			this.text = value.toUpperCase()
-				.replace(/[^MDCLXVI0-9]+/, '')
-				.substr(0, (this.text.match(/[0-9]{1,4}/)) ? 4 : 12);
+			this.text = this.validate(value);
+		},
+		$route(to) {
+			const {number} = to.params;
+
+			if (number) {
+				this.text = this.validate(to.params.number);
+			}
 		}
 	}
 }
