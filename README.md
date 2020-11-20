@@ -2,7 +2,7 @@
 
 # Stechus Kaktus – Romanizer
 
-[![Travis Status](https://travis-ci.com/Schascha/stechus-kaktus.svg?branch=main)](https://travis-ci.com/Schascha/stechus-kaktus)
+![Build](https://github.com/Schascha/stechus-kaktus/workflows/Build/badge.svg)
 
 > Just a simple romanizer
 
