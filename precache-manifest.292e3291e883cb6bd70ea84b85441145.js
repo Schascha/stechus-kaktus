@@ -1,9 +1,5 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "66895dd7a67dfa07ce5cad5e891b3632",
-    "url": "/stechus-kaktus/.htaccess"
-  },
-  {
     "revision": "995a037aaa6d29b54515",
     "url": "/stechus-kaktus/css/app.67feb39a.css"
   },
