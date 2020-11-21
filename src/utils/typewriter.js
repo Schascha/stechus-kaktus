@@ -12,7 +12,7 @@ const
 
 export class Typewriter {
 	constructor(options) {
-		if (!options.words) {
+		if (!options || !options.words) {
 			throw new Error('Missing words array or function');
 		}
 
@@ -68,7 +68,7 @@ export class Typewriter {
 
 		if (this._isFunction(words)) {
 			return words();
-		} else if(Array.isArray(words)) {
+		} else {
 			return words[Math.floor(Math.random() * words.length)];
 		}
 	}
