@@ -60,6 +60,7 @@ export class Typewriter {
 
 	clear() {
 		this.text = '';
+		this.word = null;
 		window.clearTimeout(this.timer);
 	}
 
