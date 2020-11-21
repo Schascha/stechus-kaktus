@@ -66,7 +66,8 @@ export default {
 				value.toUpperCase().replace(/[^MDCLXVI]+/, '').substr(0, 12);
 		},
 		onChange() {
-			this.$router && this.$router.push(this.validate(this.text) || '/').catch(()=>{});
+			this.text = this.validate(this.text);
+			this.$router && this.$router.push(this.text || '/').catch(()=>{});
 		},
 		onInput() {
 			this.typewriter.clear();
