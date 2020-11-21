@@ -61,7 +61,7 @@ export default {
 			}
 		},
 		validate(value) {
-			return (value.match(/^[0-9]+/)) ?
+			return (value.match(/^[1-9][0-9]*/)) ?
 				value.replace(/[^0-9]+/, '').substr(0, 4) :
 				value.toUpperCase().replace(/[^MDCLXVI]+/, '').substr(0, 12);
 		},
