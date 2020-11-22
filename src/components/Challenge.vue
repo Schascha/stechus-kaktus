@@ -1,9 +1,12 @@
 <template>
 	<div class="challenge">
-		<h2>Level {{ level + 1 }}</h2>
-		<p>
-			{{ question }}
-		</p>
+		<h2>
+			Level {{ level + 1 }}:
+			<span>{{ label }}</span>
+		</h2>
+
+		<p>{{ question }}</p>
+
 		<input
 			type="text"
 			name="answer"
@@ -39,72 +42,15 @@
 
 <script>
 import {toRoman} from '../utils/roman';
+import {level} from '../utils/level';
 
 // Alea iacta est
-
-function randomInterval(min, max) {
-	return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-const
-	level = [
-		{
-			rule: () => randomInterval(1, 10)
-		},
-		{
-			rule: () => randomInterval(11, 100)
-		},
-		{
-			rule: () => randomInterval(101, 1000)
-		},
-		{
-			rule: () => randomInterval(1001, 5000)
-		},
-		{
-			rule: () => {
-				const
-					x = randomInterval(1, 100),
-					y = randomInterval(1, 100),
-					z = x + y
-				;
-
-				return {x, y, z};
-			},
-			eq: (x, y) => `${x} + ${y}`
-		},
-		{
-			rule: () => {
-				const
-					// arr = [...Array(2)].map(() => randomInterval(50, 250)).sort((a, b) => b - a),
-					x = randomInterval(100, 200),
-					y = randomInterval(50, 99),
-					z = x - y
-				;
-
-				return {x, y, z};
-			},
-			eq: (x, y) => `${x} - ${y}`
-		},
-		{
-			rule: () => {
-				const
-					// arr = [...Array(2)].map(() => randomInterval(50, 250)).sort((a, b) => b - a),
-					x = randomInterval(2, 10),
-					y = randomInterval(2, 10),
-					z = x * y
-				;
-
-				return {x, y, z};
-			},
-			eq: (x, y) => `${x} * ${y}`
-		}
-	]
-;
 
 export default {
 	name: 'Challenge',
 	data() {
 		return {
+			label: null,
 			counter: 0,
 			level: 0,
 			question: null,
@@ -119,21 +65,21 @@ export default {
 	methods: {
 		setQuestion() {
 			const
-				{rule, eq} = level[this.level],
+				{eq, label, rule} = level[this.level],
 				r = rule(),
 				isRoman = Math.round(Math.random())
 			;
 
-			if (isRoman) {
-				this.question = (eq) ? eq(toRoman(r.x), toRoman(r.y)) : toRoman(r);
-				this.solution = (r.z || r).toString();
+			if (eq) {
+				this.question = eq(toRoman(r.x), toRoman(r.y));
+				this.solution = toRoman(r.z);
 			} else {
-				this.question = (eq) ? eq(r.x, r.y) : r;
-				this.solution = toRoman(r.z || r);
+				this.question = (isRoman) ? toRoman(r) : r;
+				this.solution = (isRoman) ? r.toString() : toRoman(r);
 			}
 
+			this.label = label;
 			this.answer = '';
-			window.console.log(this.question, this.solution);
 		},
 		showNext() {
 			return (this.level >= level.length - 1);
