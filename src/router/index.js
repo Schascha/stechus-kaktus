@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Romanizer from '../components/Romanizer.vue';
+import Challenge from '../components/Challenge.vue';
 
 Vue.use(VueRouter);
 
@@ -9,6 +10,11 @@ const routes = [
 		path: '/',
 		name: 'Default',
 		component: Romanizer
+	},
+	{
+		path: '/challenge',
+		name: 'Challenge',
+		component: Challenge
 	},
 	{
 		path: '/:number',
