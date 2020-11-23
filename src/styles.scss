@@ -152,4 +152,6 @@ main {
 	position: relative;
 	padding: 5.5rem 1rem 3rem;
 	min-height: 100vh;
+	// sass-lint:disable no-duplicate-properties
+	min-height: -webkit-fill-available;
 }
