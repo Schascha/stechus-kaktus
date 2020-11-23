@@ -78,9 +78,6 @@ export default {
 	computed: {
 		isNext() {
 			return (parseInt(this.id) >= levels.length);
-		},
-		level() {
-			return levels[parseInt(this.id) - 1];
 		}
 	},
 	methods: {
@@ -93,7 +90,7 @@ export default {
 		},
 		setQuestion() {
 			const
-				{eq, label, rule} = this.level,
+				{eq, label, rule} = levels[parseInt(this.id) - 1],
 				r = rule(),
 				isRoman = Math.round(Math.random())
 			;
@@ -112,7 +109,7 @@ export default {
 		onClick() {
 			if (this.answer.toString() === this.solution) {
 				this.answers.push({
-					level: this.level,
+					level: this.id,
 					question: this.question,
 					answer: this.answer
 				});
@@ -136,6 +133,7 @@ export default {
 		$route(to) {
 			const {id} = to.params;
 			this.checkLevel(id);
+			this.setQuestion();
 		}
 	}
 }
