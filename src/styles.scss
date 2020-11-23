@@ -10,7 +10,7 @@ $color-schemes: (
 	),
 	dark: (
 		background: $color-text,
-		color: #AAAAAA,
+		color: #aaa,
 	),
 );
 
@@ -115,9 +115,9 @@ input {
 main {
 	margin: 0 auto;
 	max-width: 740px;
+	color: $color-brand;
 	font-size: 3rem;
 	text-align: center;
-	color: $color-brand;
 
 	@media screen and (min-width: 37.5em) {
 		font-size: 4rem;
@@ -146,10 +146,10 @@ main {
 }
 
 .frame {
-	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	position: relative;
 	padding: 5.5rem 1rem 3rem;
 	min-height: 100vh;
 }
