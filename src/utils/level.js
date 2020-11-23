@@ -13,8 +13,6 @@ function randomInterval(min, max) {
 	(memory.length >= 5) && memory.shift();
 	memory.push(x);
 
-	window.console.log(memory);
-
 	return x;
 }
 

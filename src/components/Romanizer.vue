@@ -9,6 +9,9 @@
 			v-model="text"
 			@input="onInput"
 		/>
+
+		<hr />
+
 		<p :title="result">
 			{{ result }}
 		</p>
@@ -33,7 +36,9 @@ export default {
 	props: [
 		'number'
 	],
-	mounted: function () {
+	mounted() {
+		document.body.classList.add('light');
+
 		this.typewriter = new Typewriter({
 			words: () => {
 				const str = parseInt(Math.random() * year).toString();
@@ -49,6 +54,10 @@ export default {
 		} else {
 			this.typewriter.typing();
 		}
+	},
+	destroyed () {
+		document.body.classList.remove('light');
+		this.typewriter.clear();
 	},
 	methods: {
 		update(value) {

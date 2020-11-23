@@ -7,6 +7,8 @@
 
 		<p>{{ question }}</p>
 
+		<hr />
+
 		<input
 			type="text"
 			name="answer"
@@ -59,8 +61,12 @@ export default {
 			answers: []
 		}
 	},
-	mounted: function () {
+	mounted() {
+		document.body.classList.add('dark');
 		this.setQuestion();
+	},
+	destroyed() {
+		document.body.classList.remove('dark');
 	},
 	methods: {
 		setQuestion() {
