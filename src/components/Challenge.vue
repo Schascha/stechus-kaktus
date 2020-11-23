@@ -1,7 +1,7 @@
 <template>
 	<div class="challenge">
 		<h2>
-			Level {{ level + 1 }}:
+			Level {{ id }}:
 			<span>{{ label }}</span>
 		</h2>
 
@@ -20,7 +20,7 @@
 
 		<button
 			type="button"
-			:disabled="!answer.length"
+			:disabled="!answer"
 			@click="onClick"
 		>
 			Accept
@@ -35,7 +35,7 @@
 
 		<button
 			type="button"
-			:disabled="showNext()"
+			:disabled="isNext"
 			@click="onNext"
 		>
 			Next level
@@ -45,17 +45,22 @@
 
 <script>
 import {toRoman} from '../utils/roman';
-import {level} from '../utils/level';
+import {levels} from '../utils/levels';
 
 // Alea iacta est
 
 export default {
 	name: 'Challenge',
+	props: {
+		id: {
+			type: [Number, String],
+			default: 1
+		}
+	},
 	data() {
 		return {
 			label: null,
 			counter: 0,
-			level: 0,
 			question: null,
 			solution: null,
 			answer: null,
@@ -64,15 +69,31 @@ export default {
 	},
 	mounted() {
 		document.body.classList.add('dark');
+		this.checkLevel(this.id);
 		this.setQuestion();
 	},
 	destroyed() {
 		document.body.classList.remove('dark');
 	},
+	computed: {
+		isNext() {
+			return (parseInt(this.id) >= levels.length);
+		},
+		level() {
+			return levels[parseInt(this.id) - 1];
+		}
+	},
 	methods: {
+		checkLevel(id) {
+			id = parseInt(id);
+
+			if (id < 1 || id > levels.length) {
+				this.$router.replace({name: 'Challenge', params: {id: 1}})
+			}
+		},
 		setQuestion() {
 			const
-				{eq, label, rule} = level[this.level],
+				{eq, label, rule} = this.level,
 				r = rule(),
 				isRoman = Math.round(Math.random())
 			;
@@ -88,9 +109,6 @@ export default {
 			this.label = label;
 			this.answer = '';
 		},
-		showNext() {
-			return (this.level >= level.length - 1);
-		},
 		onClick() {
 			if (this.answer.toString() === this.solution) {
 				this.answers.push({
@@ -98,22 +116,26 @@ export default {
 					question: this.question,
 					answer: this.answer
 				});
+				window.console.log(this.counter, this.answers);
 				this.counter++;
 				this.setQuestion();
-				window.console.log(this.answers);
 			}
 		},
 		onHelp() {
 			this.answer = this.solution;
 		},
 		onNext() {
-			this.level++;
 			this.setQuestion();
+			this.$router && this.$router.push({name: 'Challenge', params: {id: parseInt(this.id) + 1}});
 		}
 	},
 	watch: {
 		answer(value) {
 			this.answer = value.toString().toUpperCase();
+		},
+		$route(to) {
+			const {id} = to.params;
+			this.checkLevel(id);
 		}
 	}
 }

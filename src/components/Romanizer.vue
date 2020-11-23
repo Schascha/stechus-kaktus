@@ -100,7 +100,7 @@ export default {
 			const {number} = to.params;
 
 			if (number) {
-				this.text = this.validate(to.params.number);
+				this.text = this.validate(number);
 			}
 		}
 	}

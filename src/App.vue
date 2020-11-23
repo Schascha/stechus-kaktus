@@ -1,5 +1,5 @@
 <template>
-	<div id="app">
+	<div class="frame">
 		<header>
 			<h1>Stechus Kaktus – Romanizer</h1>
 			<a

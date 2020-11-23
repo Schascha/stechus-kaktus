@@ -12,9 +12,10 @@ const routes = [
 		component: Romanizer
 	},
 	{
-		path: '/challenge',
+		path: '/challenge/:id?',
 		name: 'Challenge',
-		component: Challenge
+		component: Challenge,
+		props: true
 	},
 	{
 		path: '/:number',

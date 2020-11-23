@@ -14,12 +14,6 @@ $color-schemes: (
 	),
 );
 
-html,
-body {
-	height: 100%;
-	min-height: 100%;
-}
-
 html {
 	box-sizing: border-box;
 	font-family: $font-family;
@@ -36,11 +30,7 @@ html {
 }
 
 body {
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	margin: 0;
-	padding: 3rem 1rem;
 	background-color: $color-base;
 	color: $color-text;
 	font-weight: normal;
@@ -72,6 +62,7 @@ h1,
 h2 {
 	margin: 0;
 	font-size: 1.5rem;
+	line-height: 1.2;
 }
 
 a {
@@ -152,4 +143,13 @@ main {
 		background-color: map-get($scheme, 'background');
 		color: map-get($scheme, 'color');
 	}
+}
+
+.frame {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 5.5rem 1rem 3rem;
+	min-height: 100vh;
 }

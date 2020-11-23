@@ -17,7 +17,7 @@ function randomInterval(min, max) {
 }
 
 export const
-	level = [
+	levels = [
 		{
 			label: 'Convert numbers from 1 to 10',
 			rule: () => randomInterval(1, 10)
