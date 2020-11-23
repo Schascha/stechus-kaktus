@@ -10,7 +10,7 @@ $color-schemes: (
 	),
 	dark: (
 		background: $color-text,
-		color: $color-brand,
+		color: #AAAAAA,
 	),
 );
 
@@ -46,21 +46,26 @@ body {
 	font-weight: normal;
 }
 
-header {
+header,
+footer {
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
 	position: absolute;
-	top: 1rem;
 	right: 1rem;
 	left: 1rem;
 }
 
+header {
+	top: 1rem;
+}
+
 footer {
-	transform: translate(-50%, 0);
-	position: absolute;
 	bottom: 1rem;
-	left: 50%;
+
+	a {
+		align-self: flex-end;
+	}
 }
 
 h1,
@@ -104,6 +109,7 @@ button {
 	align-items: center;
 	justify-content: center;
 	padding: 0 1rem;
+	font-size: 1.5rem;
 
 	&[disabled] {
 		pointer-events: none;
@@ -120,6 +126,7 @@ main {
 	max-width: 740px;
 	font-size: 3rem;
 	text-align: center;
+	color: $color-brand;
 
 	@media screen and (min-width: 37.5em) {
 		font-size: 4rem;
@@ -145,8 +152,4 @@ main {
 		background-color: map-get($scheme, 'background');
 		color: map-get($scheme, 'color');
 	}
-}
-
-.romanizer {
-	color: $color-brand;
 }

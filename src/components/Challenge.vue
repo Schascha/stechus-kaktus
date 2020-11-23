@@ -20,6 +20,7 @@
 
 		<button
 			type="button"
+			:disabled="!answer.length"
 			@click="onClick"
 		>
 			Accept
@@ -37,7 +38,7 @@
 			:disabled="showNext()"
 			@click="onNext"
 		>
-			Next
+			Next level
 		</button>
 	</div>
 </template>

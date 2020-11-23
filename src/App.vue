@@ -25,6 +25,8 @@
 			>
 				<IconGitHub />
 			</a>
+			<router-link v-if="$route.name === 'Challenge'" :to="{name: 'Default'}">Romanizer</router-link>
+			<router-link v-else :to="{name: 'Challenge'}">Challenge mode</router-link>
 		</footer>
 	</div>
 </template>
