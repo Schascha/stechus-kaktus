@@ -61,11 +61,11 @@ export default {
 	data() {
 		return {
 			label: null,
-			counter: 0,
+			// counter: 0,
 			question: null,
 			solution: null,
 			answer: null,
-			answers: []
+			// answers: []
 		}
 	},
 	mounted() {
@@ -115,12 +115,12 @@ export default {
 		},
 		onClick() {
 			if (this.answer.toString() === this.solution) {
-				this.answers.push({
-					level: this.id,
-					question: this.question,
-					answer: this.answer
-				});
-				this.counter++;
+				// this.answers.push({
+				// 	level: this.id,
+				// 	question: this.question,
+				// 	answer: this.answer
+				// });
+				// this.counter++;
 				this.setQuestion();
 				this.validate(true);
 			} else {
