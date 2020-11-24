@@ -107,6 +107,12 @@ export default {
 			this.label = label;
 			this.answer = '';
 		},
+		validate(valid) {
+			document.body.classList.add((valid) ? 'valid' : 'invalid');
+			document.body.onanimationend = function() {
+				document.body.classList.remove((valid) ? 'valid' : 'invalid');
+			};
+		},
 		onClick() {
 			if (this.answer.toString() === this.solution) {
 				this.answers.push({
@@ -114,9 +120,11 @@ export default {
 					question: this.question,
 					answer: this.answer
 				});
-				window.console.log(this.counter, this.answers);
 				this.counter++;
 				this.setQuestion();
+				this.validate(true);
+			} else {
+				this.validate(false);
 			}
 		},
 		onHelp() {

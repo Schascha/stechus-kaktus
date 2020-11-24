@@ -3,6 +3,8 @@ $font-family: 'Playfair Display', serif;
 $color-brand: #c19a5b;
 $color-base: #f5efe1;
 $color-text: #22211f;
+$color-error: #d1383d;
+$color-success: #5eba7d;
 $color-schemes: (
 	light: (
 		background: $color-base,
@@ -158,4 +160,24 @@ main {
 	position: relative;
 	padding: 5.5rem 1rem 3rem;
 	min-height: 100%;
+}
+
+.valid {
+	animation: valid 0.3s forwards;
+}
+
+.invalid {
+	animation: invalid 0.3s forwards;
+}
+
+@keyframes valid {
+	50% {
+		background-color: $color-success;
+	}
+}
+
+@keyframes invalid {
+	50% {
+		background-color: $color-error;
+	}
 }
