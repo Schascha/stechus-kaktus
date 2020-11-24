@@ -15,6 +15,7 @@
 			autocomplete="off"
 			autofocus
 			spellcheck="false"
+			v-focus
 			v-model="answer"
 		/>
 

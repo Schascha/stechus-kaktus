@@ -30,7 +30,7 @@ npm test
 
 ## Bugs?
 
-Please let me know: https://github.com/Schascha/stechus-kacktus/issues
+Please let me know: https://github.com/Schascha/stechus-kaktus/issues
 
 ## :coffee: Buy me a Coffee
 

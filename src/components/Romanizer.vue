@@ -6,6 +6,7 @@
 			autocomplete="off"
 			autofocus
 			spellcheck="false"
+			v-focus
 			v-model="text"
 			@input="onInput"
 		/>
