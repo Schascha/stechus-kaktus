@@ -163,21 +163,21 @@ main {
 }
 
 .valid {
-	animation: valid 0.3s forwards;
+	animation: valid 0.3s forwards ease-out;
 }
 
 .invalid {
-	animation: invalid 0.3s forwards;
+	animation: invalid 0.3s forwards ease-out;
 }
 
 @keyframes valid {
-	50% {
+	to {
 		background-color: $color-success;
 	}
 }
 
 @keyframes invalid {
-	50% {
+	to {
 		background-color: $color-error;
 	}
 }

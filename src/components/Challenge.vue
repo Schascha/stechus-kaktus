@@ -9,38 +9,40 @@
 
 		<hr />
 
-		<input
-			type="text"
-			name="answer"
-			autocomplete="off"
-			autofocus
-			spellcheck="false"
-			v-focus
-			v-model="answer"
-		/>
+		<form v-on:submit.prevent>
+			<input
+				type="text"
+				name="answer"
+				autocomplete="off"
+				autofocus
+				spellcheck="false"
+				v-focus
+				v-model="answer"
+			/>
 
-		<button
-			type="button"
-			:disabled="!answer"
-			@click="onClick"
-		>
-			Accept
-		</button>
+			<button
+				type="submit"
+				:disabled="!answer"
+				@click="onClick"
+			>
+				Accept
+			</button>
 
-		<button
-			type="button"
-			@click="onHelp"
-		>
-			Help
-		</button>
+			<button
+				type="button"
+				@click="onHelp"
+			>
+				Help
+			</button>
 
-		<button
-			type="button"
-			:disabled="isNext"
-			@click="onNext"
-		>
-			Next level
-		</button>
+			<button
+				type="button"
+				:disabled="!isNext"
+				@click="onNext"
+			>
+				Next level
+			</button>
+		</form>
 	</div>
 </template>
 
@@ -78,7 +80,7 @@ export default {
 	},
 	computed: {
 		isNext() {
-			return (parseInt(this.id) >= levels.length);
+			return (parseInt(this.id) < levels.length);
 		}
 	},
 	methods: {
