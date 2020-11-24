@@ -25,14 +25,14 @@
 				:disabled="!answer"
 				@click="onClick"
 			>
-				Accept
+				{{ $t('button.okay') }}
 			</button>
 
 			<button
 				type="button"
 				@click="onHelp"
 			>
-				Help
+				{{ $t('button.help') }}
 			</button>
 
 			<button
@@ -40,15 +40,15 @@
 				:disabled="!isNext"
 				@click="onNext"
 			>
-				Next level
+				{{ $t('button.next') }}
 			</button>
 		</form>
 	</div>
 </template>
 
 <script>
-import {toRoman} from '../utils/roman';
-import {levels} from '../utils/levels';
+import {toRoman} from '@/utils/roman';
+import {levels} from '@/utils/levels';
 
 // Alea iacta est
 
@@ -62,7 +62,6 @@ export default {
 	},
 	data() {
 		return {
-			label: null,
 			// counter: 0,
 			question: null,
 			solution: null,
@@ -79,6 +78,12 @@ export default {
 		document.body.classList.remove('dark');
 	},
 	computed: {
+		level() {
+			return levels[parseInt(this.id) - 1];
+		},
+		label() {
+			return this.level.label(this.$i18n);
+		},
 		isNext() {
 			return (parseInt(this.id) < levels.length);
 		}
@@ -93,7 +98,7 @@ export default {
 		},
 		setQuestion() {
 			const
-				{eq, label, rule} = levels[parseInt(this.id) - 1],
+				{eq, rule} = this.level,
 				r = rule(),
 				isRoman = Math.round(Math.random())
 			;
@@ -106,7 +111,7 @@ export default {
 				this.solution = (isRoman) ? r.toString() : toRoman(r);
 			}
 
-			this.label = label;
+			// this.label = label;
 			this.answer = '';
 		},
 		validate(valid) {

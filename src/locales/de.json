@@ -1,0 +1,31 @@
+{
+  "button": {
+    "help": "Hilfe",
+    "next": "Nächstes Level",
+    "okay": "Okay"
+  },
+  "challenge": {
+    "level": {
+      "1": "Nummern von 1 bis 10",
+      "2": "Nummern bis 100",
+      "3": "Nummern bis 1000",
+      "4": "Nummern bis 5000",
+      "5": "Zwei römische Zahlen addieren",
+      "6": "Zwei römische Zahlen subtrahieren",
+      "7": "Zwei römische Zahlen mulitplizieren"
+    }
+  },
+  "link": {
+    "github": {
+      "href": "https://github.com/Schascha/stechus-kaktus",
+      "title": "Mehr auf GitHub"
+    },
+    "wikipedia": {
+      "href": "https://de.wikipedia.org/wiki/R%C3%B6mische_Zahlschrift",
+      "title": "Mehr auf Wikipedia"
+    }
+  },
+  "router": {
+    "challenge": "Challenge-Modus"
+  }
+}

@@ -3,8 +3,8 @@
 		<header>
 			<h1>Stechus Kaktus – Romanizer</h1>
 			<a
-				href="https://en.wikipedia.org/wiki/Roman_numerals"
-				title="Read more on Wikipedia"
+				:href="$t('link.wikipedia.href')"
+				:title="$t('link.wikipedia.title')"
 				target="_blank"
 				rel="noopener noreferrer"
 			>
@@ -18,15 +18,16 @@
 
 		<footer>
 			<a
-				href="https://github.com/Schascha/stechus-kaktus"
-				title="View on GitHub"
+				:href="$t('link.github.href')"
+				:title="$t('link.github.title')"
 				target="_blank"
 				rel="noopener noreferrer"
 			>
 				<IconGitHub />
 			</a>
+			<Language />
 			<router-link v-if="$route.name === 'Challenge'" :to="{name: 'Default'}">Romanizer</router-link>
-			<router-link v-else :to="{name: 'Challenge'}">Challenge mode</router-link>
+			<router-link v-else :to="{name: 'Challenge'}">{{ $t('router.challenge') }}</router-link>
 		</footer>
 	</div>
 </template>
@@ -34,12 +35,14 @@
 <script>
 	import IconGitHub from '@/assets/icons/github.svg?inline';
 	import IconWikipedia from '@/assets/icons/wikipedia.svg?inline';
+	import Language from '@/components/Language';
 
 	export default {
 		name: 'App',
 		components: {
 			IconGitHub,
-			IconWikipedia
+			IconWikipedia,
+			Language
 		}
 	}
 </script>

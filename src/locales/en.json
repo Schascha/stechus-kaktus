@@ -1,0 +1,31 @@
+{
+  "button": {
+    "help": "Help",
+    "next": "Next",
+    "okay": "Okay"
+  },
+  "challenge": {
+    "level": {
+      "1": "Convert numbers from 1 to 10",
+      "2": "Convert numbers up to 100",
+      "3": "Convert numbers up to 1000",
+      "4": "Convert numbers up to 5000",
+      "5": "Add two roman numerals",
+      "6": "Subtract two roman numerals",
+      "7": "Multiply two roman numerals"
+    }
+  },
+  "link": {
+    "github": {
+      "href": "https://github.com/Schascha/stechus-kaktus",
+      "title": "View on GitHub"
+    },
+    "wikipedia": {
+      "href": "https://en.wikipedia.org/wiki/Roman_numerals",
+      "title": "Read more on Wikipedia"
+    }
+  },
+  "router": {
+    "challenge": "Challenge mode"
+  }
+}

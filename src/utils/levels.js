@@ -1,3 +1,5 @@
+// import i18n from '@/i18n';
+
 var
 	memory = []
 ;
@@ -19,23 +21,23 @@ function randomInterval(min, max) {
 export const
 	levels = [
 		{
-			label: 'Convert numbers from 1 to 10',
+			label: ($i18n) => $i18n.t('challenge.level.1'),
 			rule: () => randomInterval(1, 10)
 		},
 		{
-			label: 'Convert numbers up to 100',
+			label: ($i18n) => $i18n.t('challenge.level.2'),
 			rule: () => randomInterval(11, 100)
 		},
 		{
-			label: 'Convert numbers up to 1000',
+			label: ($i18n) => $i18n.t('challenge.level.3'),
 			rule: () => randomInterval(101, 1000)
 		},
 		{
-			label: 'Convert numbers up to 5000',
+			label: ($i18n) => $i18n.t('challenge.level.4'),
 			rule: () => randomInterval(1001, 5000)
 		},
 		{
-			label: 'Add two roman numerals',
+			label: ($i18n) => $i18n.t('challenge.level.5'),
 			rule: () => {
 				const
 					x = randomInterval(1, 100),
@@ -48,7 +50,7 @@ export const
 			eq: (x, y) => `${x} + ${y}`
 		},
 		{
-			label: 'Subtract two roman numerals',
+			label: ($i18n) => $i18n.t('challenge.level.6'),
 			rule: () => {
 				const
 					x = randomInterval(100, 200),
@@ -61,7 +63,7 @@ export const
 			eq: (x, y) => `${x} - ${y}`
 		},
 		{
-			label: 'Multiply two roman numerals',
+			label: ($i18n) => $i18n.t('challenge.level.7'),
 			rule: () => {
 				const
 					x = randomInterval(2, 10),

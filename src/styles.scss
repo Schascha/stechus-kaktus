@@ -47,7 +47,6 @@ body {
 header,
 footer {
 	display: flex;
-	align-items: flex-start;
 	justify-content: space-between;
 	position: absolute;
 	right: 1rem;
@@ -55,15 +54,13 @@ footer {
 }
 
 header {
+	align-items: flex-start;
 	top: 1rem;
 }
 
 footer {
+	align-items: flex-end;
 	bottom: 1rem;
-
-	a {
-		align-self: flex-end;
-	}
 }
 
 h1,
@@ -92,7 +89,9 @@ svg {
 }
 
 button,
-input {
+input,
+select {
+	appearance: none;
 	background: none;
 	border: 0;
 	outline: 0;
@@ -118,6 +117,10 @@ button {
 
 input {
 	width: 100%;
+}
+
+select {
+	padding: 0 0.5rem;
 }
 
 main {
