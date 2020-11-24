@@ -51,6 +51,11 @@ footer {
 	position: absolute;
 	right: 1rem;
 	left: 1rem;
+
+	> div {
+		display: inherit;
+		align-items: inherit;
+	}
 }
 
 header {
@@ -120,6 +125,7 @@ input {
 }
 
 select {
+	margin: 0 0.5rem;
 	padding: 0 0.5rem;
 }
 

@@ -17,15 +17,17 @@
 		</main>
 
 		<footer>
-			<a
-				:href="$t('link.github.href')"
-				:title="$t('link.github.title')"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				<IconGitHub />
-			</a>
-			<Language />
+			<div>
+				<a
+					:href="$t('link.github.href')"
+					:title="$t('link.github.title')"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<IconGitHub />
+				</a>
+				<Language />
+			</div>
 			<router-link v-if="$route.name === 'Challenge'" :to="{name: 'Default'}">Romanizer</router-link>
 			<router-link v-else :to="{name: 'Challenge'}">{{ $t('router.challenge') }}</router-link>
 		</footer>
@@ -43,6 +45,13 @@
 			IconGitHub,
 			IconWikipedia,
 			Language
+		},
+		mounted() {
+			this.$watch("$i18n.locale", (newLocale, oldLocale) => {
+				if (newLocale !== oldLocale) {
+					document.documentElement.lang = newLocale;
+				}
+			}, {immediate: true});
 		}
 	}
 </script>
