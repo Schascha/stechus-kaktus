@@ -62,7 +62,6 @@ export default {
 	},
 	data() {
 		return {
-			// counter: 0,
 			question: null,
 			solution: null,
 			answer: null,
@@ -97,6 +96,10 @@ export default {
 			}
 		},
 		setQuestion() {
+			if (!this.level) {
+				return;
+			}
+
 			const
 				{eq, rule} = this.level,
 				r = rule(),
@@ -111,7 +114,6 @@ export default {
 				this.solution = (isRoman) ? r.toString() : toRoman(r);
 			}
 
-			// this.label = label;
 			this.answer = '';
 		},
 		validate(valid) {
@@ -127,9 +129,8 @@ export default {
 				// 	question: this.question,
 				// 	answer: this.answer
 				// });
-				// this.counter++;
-				this.setQuestion();
 				this.validate(true);
+				this.setQuestion();
 			} else {
 				this.validate(false);
 			}
@@ -138,8 +139,7 @@ export default {
 			this.answer = this.solution;
 		},
 		onNext() {
-			this.setQuestion();
-			this.$router && this.$router.push({name: 'Challenge', params: {id: parseInt(this.id) + 1}});
+			this.$router.push({name: 'Challenge', params: {id: parseInt(this.id) + 1}});
 		}
 	},
 	watch: {
