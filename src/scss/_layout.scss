@@ -1,21 +1,3 @@
-$font-family: 'Playfair Display', serif;
-
-$color-brand: #c19a5b;
-$color-base: #f5efe1;
-$color-text: #22211f;
-$color-error: #d1383d;
-$color-success: #5eba7d;
-$color-schemes: (
-	light: (
-		background: $color-base,
-		color: $color-text,
-	),
-	dark: (
-		background: $color-text,
-		color: #aaa,
-	),
-);
-
 html {
 	box-sizing: border-box;
 	font-family: $font-family;
@@ -130,28 +112,29 @@ select {
 }
 
 main {
+	display: block;
 	margin: 0 auto;
+	width: 100%;
 	max-width: 740px;
 	color: $color-brand;
-	font-size: 3rem;
+	font-size: 2.5rem;
+	line-height: 1;
 	text-align: center;
 
-	@media screen and (min-width: 37.5em) {
+	@include mq($sm) {
 		font-size: 4rem;
 	}
 
 	p,
 	input {
-		overflow: hidden;
 		margin: 0;
 		padding: 2rem 0;
-		white-space: nowrap;
-		text-overflow: ellipsis;
 	}
 
 	p {
-		position: relative;
+		overflow: auto;
 		min-height: calc(1.5em + 4rem);
+		white-space: nowrap;
 	}
 }
 

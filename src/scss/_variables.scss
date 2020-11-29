@@ -1,0 +1,20 @@
+$font-family: 'Playfair Display', serif;
+
+$color-brand: #c19a5b;
+$color-base: #f5efe1;
+$color-text: #22211f;
+$color-error: #d1383d;
+$color-success: #5eba7d;
+
+$color-schemes: (
+	light: (
+		background: $color-base,
+		color: $color-text,
+	),
+	dark: (
+		background: $color-text,
+		color: #aaa,
+	),
+);
+
+$sm: 37.5em;

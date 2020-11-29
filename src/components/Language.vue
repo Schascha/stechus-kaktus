@@ -16,3 +16,7 @@
 		}
 	};
 </script>
+
+<style lang="scss">
+	@import '@/scss/components/_language';
+</style>

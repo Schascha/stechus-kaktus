@@ -1,0 +1,17 @@
+@mixin mq($min: false, $max: false) {
+	@if ($min) {
+		@if ($max and $max > $min) {
+			 @media screen and (min-width: $min) and (max-width: $max) {
+				@content;
+			}
+		} @else {
+			 @media screen and (min-width: $min) {
+				@content;
+			}
+		}
+	} @else if ($max) {
+		 @media screen and (max-width: $max) {
+			@content;
+		}
+	}
+}
