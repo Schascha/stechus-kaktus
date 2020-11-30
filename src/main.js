@@ -6,7 +6,7 @@ import i18n from './i18n';
 
 Vue.directive('focus', {
 	inserted: function(el) {
-		el.focus()
+		el.focus();
 	}
 });
 
