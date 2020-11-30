@@ -1,6 +1,7 @@
 import {shallowMount} from '@vue/test-utils';
 import Romanizer from '@/components/Romanizer';
 import {fromRoman, toRoman} from '@/utils/roman';
+import '@/directives/focus';
 
 describe('Component Romanizer.vue', () => {
 
