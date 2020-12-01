@@ -25,6 +25,9 @@ module.exports = {
 
 	pwa: {
 		name: 'Stechus Kaktus – Romanizer',
-		themeColor: '#C19A5B'
+		themeColor: '#C19A5B',
+		manifestOptions: {
+			background_color: "#F5EFE1"
+		}
 	},
 }
