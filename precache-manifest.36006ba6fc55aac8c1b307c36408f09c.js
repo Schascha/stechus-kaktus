@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c9aa0dadd0cd03d58580",
+    "revision": "4d73352f2ba5add63066",
     "url": "/stechus-kaktus/css/app.12839f73.css"
   },
   {
-    "revision": "1646e1f32560aeb50c4f4587465f3729",
+    "revision": "8628adda9540e93072c1489043978b17",
     "url": "/stechus-kaktus/index.html"
   },
   {
-    "revision": "c9aa0dadd0cd03d58580",
-    "url": "/stechus-kaktus/js/app.0f749442.js"
+    "revision": "4d73352f2ba5add63066",
+    "url": "/stechus-kaktus/js/app.26ea3933.js"
   },
   {
-    "revision": "f898a0c17c42e60fc2f0",
-    "url": "/stechus-kaktus/js/chunk-vendors.de76e4ff.js"
+    "revision": "72a1a55807ece40b7fca",
+    "url": "/stechus-kaktus/js/chunk-vendors.e7342c9f.js"
   },
   {
     "revision": "0e0f8bb7a254ad72e9e22c726c1069f4",
