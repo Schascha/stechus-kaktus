@@ -1,7 +1,17 @@
 {
   "name": "stechus-kaktus",
   "version": "0.1.0",
-  "private": true,
+  "author": "Sascha Künstler <contact.schascha@gmail.com> (http://www.schaschaweb.de)",
+  "license": "MIT",
+  "funding": "https://www.paypal.me/LosZahlos",
+  "homepage": "https://schascha.github.io/stechus-kaktus/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Schascha/stechus-kaktus"
+  },
+  "bugs": {
+    "url": "https://github.com/Schascha/stechus-kaktus/issues"
+  },
   "scripts": {
     "build": "vue-cli-service build",
     "i18n": "i18next \"./src/**/*.{js,vue}\" --config i18next-parser.config.js && vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\"",
@@ -9,7 +19,7 @@
     "test": "vue-cli-service lint && vue-cli-service test:unit && sass-lint src/**/*.scss -v -q"
   },
   "dependencies": {
-    "core-js": "^3.6.5",
+    "core-js": "^3.8.0",
     "register-service-worker": "^1.7.1",
     "vue": "^2.6.11",
     "vue-i18n": "^8.17.3",
