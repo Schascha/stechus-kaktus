@@ -1,22 +1,22 @@
 <template>
-	<div class="romanizer">
-		<input
-			type="text"
-			name="text"
-			autocomplete="off"
-			autofocus
-			spellcheck="false"
-			v-focus
-			v-model="text"
-			@input="onInput"
-		/>
+  <div class="romanizer">
+    <input
+      v-model="text"
+      v-focus
+      type="text"
+      name="text"
+      autocomplete="off"
+      autofocus
+      spellcheck="false"
+      @input="onInput"
+    >
 
-		<hr />
+    <hr>
 
-		<p :title="result">
-			{{ result }}
-		</p>
-	</div>
+    <p :title="result">
+      {{ result }}
+    </p>
+  </div>
 </template>
 
 <script>
@@ -29,14 +29,34 @@ const
 
 export default {
 	name: 'Romanizer',
+	props: {
+		number: {
+			type: [Number, String],
+			default: null
+		}
+	},
 	data() {
 		return {
 			text: year
 		}
 	},
-	props: [
-		'number'
-	],
+	computed: {
+		result() {
+			return (isRoman(this.text)) ? fromRoman(this.text) : toRoman(this.text);
+		}
+	},
+	watch: {
+		text(value) {
+			this.text = this.validate(value);
+		},
+		$route(to) {
+			const {number} = to.params;
+
+			if (number) {
+				this.text = this.validate(number);
+			}
+		}
+	},
 	mounted() {
 		document.body.classList.add('light');
 
@@ -87,23 +107,6 @@ export default {
 				this.typewriter.typing(8000);
 			}
 		},
-	},
-	computed: {
-		result() {
-			return (isRoman(this.text)) ? fromRoman(this.text) : toRoman(this.text);
-		}
-	},
-	watch: {
-		text(value) {
-			this.text = this.validate(value);
-		},
-		$route(to) {
-			const {number} = to.params;
-
-			if (number) {
-				this.text = this.validate(number);
-			}
-		}
 	}
 }
 </script>

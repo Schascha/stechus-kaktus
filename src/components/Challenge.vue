@@ -1,56 +1,54 @@
 <template>
-	<div class="challenge">
-		<h2>
-			Level {{ id }}:
-			<span>{{ label }}</span>
-		</h2>
+  <div class="challenge">
+    <h2>
+      Level {{ id }}:
+      <span>{{ label }}</span>
+    </h2>
 
-		<p>{{ question }}</p>
+    <p>{{ question }}</p>
 
-		<hr />
+    <hr>
 
-		<form v-on:submit.prevent>
-			<input
-				type="text"
-				name="answer"
-				autocomplete="off"
-				autofocus
-				spellcheck="false"
-				v-focus
-				v-model="answer"
-			/>
+    <form @submit.prevent>
+      <input
+        v-model="answer"
+        v-focus
+        type="text"
+        name="answer"
+        autocomplete="off"
+        autofocus
+        spellcheck="false"
+      >
 
-			<button
-				type="submit"
-				:disabled="!answer"
-				@click="onClick"
-			>
-				{{ $t('button.okay') }}
-			</button>
+      <button
+        type="submit"
+        :disabled="!answer"
+        @click="onClick"
+      >
+        {{ $t('button.okay') }}
+      </button>
 
-			<button
-				type="button"
-				@click="onHelp"
-			>
-				{{ $t('button.help') }}
-			</button>
+      <button
+        type="button"
+        @click="onHelp"
+      >
+        {{ $t('button.help') }}
+      </button>
 
-			<button
-				type="button"
-				:disabled="!isNext"
-				@click="onNext"
-			>
-				{{ $t('button.next') }}
-			</button>
-		</form>
-	</div>
+      <button
+        type="button"
+        :disabled="!isNext"
+        @click="onNext"
+      >
+        {{ $t('button.next') }}
+      </button>
+    </form>
+  </div>
 </template>
 
 <script>
 import {toRoman} from '@/utils/roman';
 import {levels} from '@/utils/levels';
-
-// Alea iacta est
 
 export default {
 	name: 'Challenge',
@@ -68,14 +66,6 @@ export default {
 			// answers: []
 		}
 	},
-	mounted() {
-		document.body.classList.add('dark');
-		this.checkLevel(this.id);
-		this.setQuestion();
-	},
-	destroyed() {
-		document.body.classList.remove('dark');
-	},
 	computed: {
 		level() {
 			return levels[parseInt(this.id) - 1];
@@ -86,6 +76,24 @@ export default {
 		isNext() {
 			return (parseInt(this.id) < levels.length);
 		}
+	},
+	watch: {
+		answer(value) {
+			this.answer = value.toString().toUpperCase();
+		},
+		$route(to) {
+			const {id} = to.params;
+			this.checkLevel(id);
+			this.setQuestion();
+		}
+	},
+	mounted() {
+		document.body.classList.add('dark');
+		this.checkLevel(this.id);
+		this.setQuestion();
+	},
+	destroyed() {
+		document.body.classList.remove('dark');
 	},
 	methods: {
 		checkLevel(id) {
@@ -140,16 +148,6 @@ export default {
 		},
 		onNext() {
 			this.$router.push({name: 'Challenge', params: {id: parseInt(this.id) + 1}});
-		}
-	},
-	watch: {
-		answer(value) {
-			this.answer = value.toString().toUpperCase();
-		},
-		$route(to) {
-			const {id} = to.params;
-			this.checkLevel(id);
-			this.setQuestion();
 		}
 	}
 }

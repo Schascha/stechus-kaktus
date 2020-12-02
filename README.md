@@ -9,23 +9,33 @@
 https://schascha.github.io/stechus-kaktus/
 
 ## Project setup
+
 ```
 npm install
 ```
 
 ### Compiles and hot-reloads for development
+
 ```
 npm start
 ```
 
 ### Compiles and minifies for production
+
 ```
 npm run build
 ```
 
-### Lints and fixes files
+### Test, lints and fixes files
+
 ```
 npm test
+```
+
+### Parse i18n translations
+
+```
+npm run i18n
 ```
 
 ## Bugs?
