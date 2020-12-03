@@ -1,15 +1,15 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "348c8f1adaf31817d3f4",
+    "revision": "d62290fed44ed15d015a",
     "url": "/stechus-kaktus/css/app.12839f73.css"
   },
   {
-    "revision": "6b66154e35dee5a54d35972effa5072c",
+    "revision": "29f5aca154631b8e3df62b6b64295e82",
     "url": "/stechus-kaktus/index.html"
   },
   {
-    "revision": "348c8f1adaf31817d3f4",
-    "url": "/stechus-kaktus/js/app.dd70c62a.js"
+    "revision": "d62290fed44ed15d015a",
+    "url": "/stechus-kaktus/js/app.1b34a313.js"
   },
   {
     "revision": "72a1a55807ece40b7fca",
