@@ -1,27 +1,27 @@
 <template>
-  <div class="romanizer">
-    <input
-      v-model="text"
-      v-focus
-      type="text"
-      name="text"
-      autocomplete="off"
-      autofocus
-      spellcheck="false"
-      @input="onInput"
-    >
+	<div class="romanizer">
+		<input
+			v-model="text"
+			v-focus
+			type="text"
+			name="text"
+			autocomplete="off"
+			autofocus
+			spellcheck="false"
+			@input="onInput"
+		>
 
-    <hr>
+		<hr>
 
-    <p :title="result">
-      {{ result }}
-    </p>
-  </div>
+		<p :title="result">
+			{{ result }}
+		</p>
+	</div>
 </template>
 
 <script>
-import {fromRoman, isRoman, toRoman} from '../utils/roman';
-import {Typewriter} from '../utils/typewriter';
+import {fromRoman, isRoman, toRoman} from '@/utils/roman';
+import {Typewriter} from '@/utils/typewriter';
 
 const
 	year = new Date().getFullYear().toString()
@@ -106,7 +106,7 @@ export default {
 			if (!this.text.length) {
 				this.typewriter.typing(8000);
 			}
-		},
+		}
 	}
 }
 </script>

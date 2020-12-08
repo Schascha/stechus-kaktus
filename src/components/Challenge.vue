@@ -1,49 +1,49 @@
 <template>
-  <div class="challenge">
-    <h2>
-      Level {{ id }}:
-      <span>{{ label }}</span>
-    </h2>
+	<div class="challenge">
+		<h2>
+			Level {{ id }}:
+			<span>{{ label }}</span>
+		</h2>
 
-    <p>{{ question }}</p>
+		<p>{{ question }}</p>
 
-    <hr>
+		<hr>
 
-    <form @submit.prevent>
-      <input
-        v-model="answer"
-        v-focus
-        type="text"
-        name="answer"
-        autocomplete="off"
-        autofocus
-        spellcheck="false"
-      >
+		<form @submit.prevent>
+			<input
+				v-model="answer"
+				v-focus
+				type="text"
+				name="answer"
+				autocomplete="off"
+				autofocus
+				spellcheck="false"
+			>
 
-      <button
-        type="submit"
-        :disabled="!answer"
-        @click="onClick"
-      >
-        {{ $t('button.okay') }}
-      </button>
+			<button
+				type="submit"
+				:disabled="!answer"
+				@click="onClick"
+			>
+				{{ $t('button.okay') }}
+			</button>
 
-      <button
-        type="button"
-        @click="onHelp"
-      >
-        {{ $t('button.help') }}
-      </button>
+			<button
+				type="button"
+				@click="onHelp"
+			>
+				{{ $t('button.help') }}
+			</button>
 
-      <button
-        type="button"
-        :disabled="!isNext"
-        @click="onNext"
-      >
-        {{ $t('button.next') }}
-      </button>
-    </form>
-  </div>
+			<button
+				type="button"
+				:disabled="!isNext"
+				@click="onNext"
+			>
+				{{ $t('button.next') }}
+			</button>
+		</form>
+	</div>
 </template>
 
 <script>
