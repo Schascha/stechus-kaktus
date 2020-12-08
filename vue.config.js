@@ -25,9 +25,14 @@ module.exports = {
 
 	pwa: {
 		name: 'Stechus Kaktus – Romanizer',
+		short_name: 'Stechus Kaktus',
 		themeColor: '#C19A5B',
 		manifestOptions: {
-			background_color: "#F5EFE1"
+			background_color: "#F5EFE1",
+			shortcuts: [{
+				name: "Challenge mode",
+				url: "/challenge"
+			}]
 		}
 	},
 }

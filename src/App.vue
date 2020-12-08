@@ -55,13 +55,6 @@
 			IconGitHub,
 			IconWikipedia,
 			Language
-		},
-		mounted() {
-			this.$watch('$i18n.locale', (newLocale, oldLocale) => {
-				if (newLocale !== oldLocale) {
-					document.documentElement.lang = newLocale;
-				}
-			}, {immediate: true});
 		}
 	}
 </script>

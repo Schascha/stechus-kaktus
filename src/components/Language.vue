@@ -19,6 +19,13 @@
 			return {
 				langs: ['en', 'de']
 			};
+		},
+		mounted() {
+			this.$watch('$i18n.locale', (newLocale, oldLocale) => {
+				if (newLocale !== oldLocale) {
+					document.documentElement.lang = newLocale;
+				}
+			}, {immediate: true});
 		}
 	};
 </script>
