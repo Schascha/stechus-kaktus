@@ -42,7 +42,7 @@ npm run i18n
 
 Please let me know: https://github.com/Schascha/stechus-kaktus/issues
 
-## :coffee: Buy me a Coffee
+## Buy me a Coffee :coffee:
 
 Support this project and [others](https://github.com/Schascha?tab=repositories) via [PayPal](https://www.paypal.me/LosZahlos). Thanks
 

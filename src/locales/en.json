@@ -26,6 +26,8 @@
     }
   },
   "router": {
-    "challenge": "Challenge mode"
-  }
+    "challenge": "Challenge mode",
+    "default": "Romanizer"
+  },
+  "title": "Stechus Kaktus – Romanizer"
 }

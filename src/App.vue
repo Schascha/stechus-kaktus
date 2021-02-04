@@ -1,7 +1,11 @@
 <template>
 	<div class="frame">
 		<header>
-			<h1>Stechus Kaktus – Romanizer</h1>
+			<h1>
+				<router-link :to="{name: 'Default'}">
+					{{ $t('title') }}
+				</router-link>
+			</h1>
 			<a
 				:href="$t('link.wikipedia.href')"
 				:title="$t('link.wikipedia.title')"
@@ -32,7 +36,7 @@
 				v-if="$route.name === 'Challenge'"
 				:to="{name: 'Default'}"
 			>
-				Romanizer
+				{{ $t('router.default') }}
 			</router-link>
 			<router-link
 				v-else
