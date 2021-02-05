@@ -4,7 +4,7 @@
 
 ![Build](https://github.com/Schascha/stechus-kaktus/workflows/Build/badge.svg)
 
-> Just a simple romanizer
+> Just a simple roman numerals converter
 
 https://schascha.github.io/stechus-kaktus/
 

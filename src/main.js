@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import App from './App.vue';
-import './registerServiceWorker';
-import './directives/focus';
 import router from './router';
 import i18n from './i18n';
+import './registerServiceWorker';
+import './directives/focus';
 
 new Vue({
     router,
