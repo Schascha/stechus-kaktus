@@ -4,11 +4,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/stechus-kaktus/css/app.12839f73.css"
   },
   {
-    "revision": "06893016e5949a2399c8fbf111ddb84f",
+    "revision": "3119defe92f34c5f64c9a6641eb697ef",
     "url": "/stechus-kaktus/img/sharing.png"
   },
   {
-    "revision": "060b8bbde87403eb1f97c0aac7b58adb",
+    "revision": "a8713e3b6cb7a7814767f69d7b2f8e8a",
     "url": "/stechus-kaktus/index.html"
   },
   {
