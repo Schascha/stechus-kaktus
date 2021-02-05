@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/stechus-kaktus/img/sharing.png"
   },
   {
-    "revision": "a8713e3b6cb7a7814767f69d7b2f8e8a",
+    "revision": "06ce75d6d43cc4fd9a20e812872a29e2",
     "url": "/stechus-kaktus/index.html"
   },
   {
