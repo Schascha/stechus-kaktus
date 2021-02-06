@@ -1,7 +1,10 @@
-import {shallowMount} from '@vue/test-utils';
+import {config, shallowMount} from '@vue/test-utils';
 import Romanizer from '@/components/Romanizer';
 import {fromRoman, toRoman} from '@/utils/roman';
 import '@/directives/focus';
+
+// Mock i18n
+config.mocks.$t = key => key;
 
 describe('Component Romanizer.vue', () => {
 
@@ -11,8 +14,8 @@ describe('Component Romanizer.vue', () => {
 			wrapper = shallowMount(Romanizer)
 		;
 
-		expect(wrapper.text()).toBe(toRoman(text));
-	})
+		expect(wrapper.find('p').text()).toBe(toRoman(text));
+	});
 
 	it('should update text', async () => {
 		const
@@ -23,7 +26,7 @@ describe('Component Romanizer.vue', () => {
 
 		input.setValue(text);
 		await input.trigger('change');
-		expect(wrapper.text()).toBe(fromRoman(text).toString());
-	})
+		expect(wrapper.find('p').text()).toBe(fromRoman(text).toString());
+	});
 
-})
+});

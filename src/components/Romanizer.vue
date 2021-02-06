@@ -4,10 +4,10 @@
 			{{ $t('field.text.label') }}
 		</label>
 		<input
+			id="text"
 			v-model="text"
 			v-focus
 			type="text"
-			id="text"
 			name="text"
 			autocomplete="off"
 			autofocus
