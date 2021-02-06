@@ -1,4 +1,18 @@
 module.exports = {
+
+	chainWebpack: (config) => {
+		config
+			.plugin('html')
+			.tap(args => {
+				args[0].title = 'Stechus Kaktus – Romanizer';
+				args[0].meta = {
+					url: 'https://schascha.github.io/stechus-kaktus/',
+					description: 'Just a simple roman numerals converter'
+				};
+				return args;
+			});
+	},
+
 	css: {
 		loaderOptions: {
 			scss: {
