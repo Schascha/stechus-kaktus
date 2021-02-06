@@ -15,6 +15,17 @@
       "7": "Zwei römische Zahlen mulitplizieren"
     }
   },
+  "field": {
+    "answer": {
+      "label": "Antwort"
+    },
+    "language": {
+      "label": "Sprache"
+    },
+    "text": {
+      "label": "Eingabe"
+    }
+  },
   "link": {
     "github": {
       "href": "https://github.com/Schascha/stechus-kaktus",

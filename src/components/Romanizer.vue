@@ -1,9 +1,13 @@
 <template>
 	<div class="romanizer">
+		<label for="text">
+			{{ $t('field.text.label') }}
+		</label>
 		<input
 			v-model="text"
 			v-focus
 			type="text"
+			id="text"
 			name="text"
 			autocomplete="off"
 			autofocus

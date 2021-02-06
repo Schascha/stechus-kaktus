@@ -1,6 +1,13 @@
 <template>
 	<div class="language">
-		<select v-model="$i18n.locale">
+		<label for="language">
+			{{ $t('field.language.label') }}
+		</label>
+
+		<select
+			id="language"
+			v-model="$i18n.locale"
+		>
 			<option
 				v-for="(lang, i) in langs"
 				:key="`Lang${i}`"

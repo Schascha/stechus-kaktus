@@ -106,6 +106,10 @@ select {
 	padding: 0 0.5rem;
 }
 
+label {
+	@include visually-hidden();
+}
+
 main {
 	display: block;
 	margin: 0 auto;

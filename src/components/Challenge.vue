@@ -10,10 +10,14 @@
 		<hr>
 
 		<form @submit.prevent>
+			<label for="text">
+				{{ $t('field.answer.label') }}
+			</label>
 			<input
 				v-model="answer"
 				v-focus
 				type="text"
+				id="answer"
 				name="answer"
 				autocomplete="off"
 				autofocus

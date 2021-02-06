@@ -15,6 +15,17 @@
       "7": "Multiply two roman numerals"
     }
   },
+  "field": {
+    "answer": {
+      "label": "Enter answer"
+    },
+    "language": {
+      "label": "Change language"
+    },
+    "text": {
+      "label": "Enter numbers"
+    }
+  },
   "link": {
     "github": {
       "href": "https://github.com/Schascha/stechus-kaktus",
