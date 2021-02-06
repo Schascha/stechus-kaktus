@@ -64,5 +64,5 @@
 </script>
 
 <style lang="scss">
-	@import '@/scss/_layout';
+	@import '@/scss/layout';
 </style>

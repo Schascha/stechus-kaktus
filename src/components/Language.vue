@@ -31,5 +31,5 @@
 </script>
 
 <style lang="scss">
-	@import '@/scss/components/_language';
+	@import '@/scss/components/language';
 </style>
