@@ -51,6 +51,18 @@ module.exports = {
 			exclude: [
 				/\.map$/,
 				/manifest\.json$/
+			],
+			runtimeCaching: [
+				{
+					urlPattern: 'https://fonts.googleapis.com/.*',
+					handler: 'cacheFirst',
+					method: 'GET',
+					strategyOptions: {
+						cacheableResponse: {
+							statuses: [0, 200]
+						}
+					}
+				}
 			]
 		}
 	},
