@@ -5,6 +5,7 @@
     "okay": "Okay"
   },
   "challenge": {
+    "answers": "{answers} right, {failures} wrong",
     "level": {
       "1": "Convert numbers from 1 to 10",
       "2": "Convert numbers up to 100",

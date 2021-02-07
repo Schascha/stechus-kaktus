@@ -154,11 +154,11 @@ main {
 }
 
 .valid {
-	animation: valid 0.3s forwards ease-out;
+	animation: valid 0.5s forwards ease-out;
 }
 
 .invalid {
-	animation: invalid 0.3s forwards ease-out;
+	animation: invalid 0.5s forwards ease-out;
 }
 
 @keyframes valid {

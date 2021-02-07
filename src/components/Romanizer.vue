@@ -10,7 +10,6 @@
 			type="text"
 			name="text"
 			autocomplete="off"
-			autofocus
 			spellcheck="false"
 			@input="onInput"
 		>

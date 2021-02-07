@@ -5,6 +5,7 @@
     "okay": "Okay"
   },
   "challenge": {
+    "answers": "{answers} richtig, {failures} falsch",
     "level": {
       "1": "Nummern von 1 bis 10",
       "2": "Nummern bis 100",

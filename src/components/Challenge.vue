@@ -20,7 +20,6 @@
 				type="text"
 				name="answer"
 				autocomplete="off"
-				autofocus
 				spellcheck="false"
 			>
 
@@ -47,6 +46,13 @@
 				{{ $t('button.next') }}
 			</button>
 		</form>
+
+		<p 
+			v-if="answers.length || failures"
+			class="answers"
+		>
+			{{ $t('challenge.answers', {answers: answers.length, failures}) }}
+		</p>
 	</div>
 </template>
 
@@ -67,7 +73,8 @@ export default {
 			question: null,
 			solution: null,
 			answer: null,
-			// answers: []
+			answers: [],
+			failures: 0
 		}
 	},
 	computed: {
@@ -83,7 +90,9 @@ export default {
 	},
 	watch: {
 		answer(value) {
-			this.answer = value.toString().toUpperCase();
+			this.answer = (value.match(/^[1-9][0-9]*/)) ?
+				value.replace(/[^0-9]+/, '').substr(0, 4) :
+				value.toUpperCase().replace(/[^MDCLXVI]+/, '').substr(0, 12)
 		},
 		$route(to) {
 			const {id} = to.params;
@@ -136,14 +145,15 @@ export default {
 		},
 		onClick() {
 			if (this.answer.toString() === this.solution) {
-				// this.answers.push({
-				// 	level: this.id,
-				// 	question: this.question,
-				// 	answer: this.answer
-				// });
+				this.answers.push({
+					level: this.id,
+					question: this.question,
+					answer: this.answer
+				});
 				this.validate(true);
 				this.setQuestion();
 			} else {
+				this.failures++;
 				this.validate(false);
 			}
 		},
@@ -156,3 +166,7 @@ export default {
 	}
 }
 </script>
+
+<style lang="scss">
+	@import '@/scss/components/challenge';
+</style>
