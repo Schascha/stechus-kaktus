@@ -1,5 +1,4 @@
 module.exports = {
-
 	chainWebpack: (config) => {
 		config
 			.plugin('html')
@@ -40,7 +39,6 @@ module.exports = {
 	pwa: {
 		name: 'Stechus Kaktus – Romanizer',
 		short_name: 'Stechus Kaktus',
-		description: 'Just a simple roman numerals converter',
 		themeColor: '#C19A5B',
 		manifestOptions: {
 			background_color: "#F5EFE1",
@@ -48,6 +46,12 @@ module.exports = {
 				name: "Challenge mode",
 				url: "/challenge"
 			}]
+		},
+		workboxOptions: {
+			exclude: [
+				/\.map$/,
+				/manifest\.json$/
+			]
 		}
 	},
 }
