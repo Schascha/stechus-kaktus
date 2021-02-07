@@ -32,3 +32,5 @@ self.addEventListener('message', (event) => {
  */
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
+
+workbox.routing.registerRoute("https://fonts.googleapis.com/.*", new workbox.strategies.CacheFirst(), 'GET');
