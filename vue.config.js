@@ -56,12 +56,7 @@ module.exports = {
 				{
 					urlPattern: 'https://fonts.googleapis.com/.*',
 					handler: 'cacheFirst',
-					method: 'GET',
-					strategyOptions: {
-						cacheableResponse: {
-							statuses: [0, 200]
-						}
-					}
+					method: 'GET'
 				}
 			]
 		}
