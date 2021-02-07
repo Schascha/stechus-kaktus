@@ -116,18 +116,19 @@ main {
 	width: 100%;
 	max-width: 740px;
 	color: $color-brand;
-	font-size: 2.5rem;
 	line-height: 1;
 	text-align: center;
 
-	@include mq($sm) {
-		font-size: 4rem;
-	}
 
 	p,
 	input {
 		margin: 0;
 		padding: 2rem 0;
+		font-size: 2.5rem;
+
+		@include mq($sm) {
+			font-size: 4rem;
+		}
 	}
 
 	p {
@@ -135,6 +136,12 @@ main {
 		min-height: calc(1.5em + 4rem);
 		white-space: nowrap;
 	}
+}
+
+.info {
+	display: block;
+	margin: 1.5rem 0;
+	font-size: 1rem;
 }
 
 @each $name, $scheme in $color-schemes {

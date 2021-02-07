@@ -47,12 +47,12 @@
 			</button>
 		</form>
 
-		<p 
+		<span
 			v-if="answers.length || failures"
-			class="answers"
+			class="info"
 		>
 			{{ $t('challenge.answers', {answers: answers.length, failures}) }}
-		</p>
+		</span>
 	</div>
 </template>
 
@@ -166,7 +166,3 @@ export default {
 	}
 }
 </script>
-
-<style lang="scss">
-	@import '@/scss/components/challenge';
-</style>
