@@ -44,7 +44,7 @@ module.exports = {
 			short_name: 'Stechus Kaktus',
 			shortcuts: [{
 				name: "Challenge mode",
-				url: "/stechus-kaktus/challenge"
+				url: "./#/challenge"
 			}]
 		},
 		workboxOptions: {
