@@ -40,11 +40,11 @@ module.exports = {
 		name: 'Stechus Kaktus – Romanizer',
 		themeColor: '#C19A5B',
 		manifestOptions: {
-			background_color: "#F5EFE1",
+			background_color: '#F5EFE1',
 			short_name: 'Stechus Kaktus',
 			shortcuts: [{
-				name: "Challenge mode",
-				url: "./#/challenge"
+				name: 'Challenge mode',
+				url: './#/challenge'
 			}]
 		},
 		workboxOptions: {

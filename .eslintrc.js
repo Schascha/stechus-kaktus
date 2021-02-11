@@ -5,18 +5,15 @@ module.exports = {
 		jest: true
 	},
 	extends: [
-		"eslint:recommended",
-		"plugin:vue/recommended"
+		'plugin:vue/recommended',
+		'@schascha/eslint-config'
 	],
 	parserOptions: {
-		parser: "babel-eslint"
+		parser: 'babel-eslint'
 	},
 	rules: {
-		"no-console": process.env.NODE_ENV === "production" ? "error" : "off",
-		"no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
-		'object-curly-spacing': ['error', 'never'],
-		'semi': 'error',
-		'semi-spacing': 'error',
-		"vue/html-indent": ["error", "tab"]
+		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+		'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+		'vue/html-indent': ['error', 'tab']
 	}
 };
