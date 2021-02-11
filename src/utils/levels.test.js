@@ -1,10 +1,10 @@
 import {levels} from './levels';
 
-function i18n() {
-	return {
+const
+	i18n = {
 		t: (str) => str
-	};
-}
+	}
+;
 
 describe('The levels util', () => {
 
