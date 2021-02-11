@@ -59,7 +59,7 @@ describe('The levels util', () => {
 		;
 
 		expect(x).not.toBe(y);
-		expect(z).toBe(x + y)
+		expect(z).toBe(x + y);
 		expect(z).toBeGreaterThan(1);
 		expect(z).toBeLessThan(200);
 		expect(eq(x, y)).toBe(`${x} + ${y}`);
@@ -73,7 +73,7 @@ describe('The levels util', () => {
 		;
 
 		expect(x).not.toBe(y);
-		expect(z).toBe(x - y)
+		expect(z).toBe(x - y);
 		expect(z).toBeGreaterThanOrEqual(1);
 		expect(z).toBeLessThan(200);
 		expect(eq(x, y)).toBe(`${x} - ${y}`);
@@ -87,7 +87,7 @@ describe('The levels util', () => {
 		;
 
 		expect(x).not.toBe(y);
-		expect(z).toBe(x * y)
+		expect(z).toBe(x * y);
 		expect(z).toBeGreaterThanOrEqual(10);
 		expect(z).toBeLessThan(100);
 		expect(eq(x, y)).toBe(`${x} × ${y}`);

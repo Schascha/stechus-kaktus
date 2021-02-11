@@ -60,7 +60,7 @@
 			IconWikipedia,
 			Language
 		}
-	}
+	};
 </script>
 
 <style lang="scss">

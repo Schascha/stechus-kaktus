@@ -6,4 +6,4 @@ module.exports = {
   ],
   collectCoverage: true,
   collectCoverageFrom: ['src/*/*.{vue,[jt]s?(x)}'],
-}
+};

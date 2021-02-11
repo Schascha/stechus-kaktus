@@ -16,7 +16,10 @@
 
 		<hr>
 
-		<p :title="result">
+		<p
+			ref="result"
+			:title="result"
+		>
 			{{ result }}
 		</p>
 	</div>
@@ -24,6 +27,7 @@
 
 <script>
 import {fromRoman, isRoman, toRoman} from '@/utils/roman';
+import {scrollLeftToEnd} from '@/utils/scroll';
 import {Typewriter} from '@/utils/typewriter';
 
 const
@@ -41,7 +45,7 @@ export default {
 	data() {
 		return {
 			text: year
-		}
+		};
 	},
 	computed: {
 		result() {
@@ -51,6 +55,7 @@ export default {
 	watch: {
 		text(value) {
 			this.text = this.validate(value);
+			scrollLeftToEnd(this.$refs['result'], 400);
 		},
 		$route(to) {
 			const {number} = to.params;
@@ -70,8 +75,7 @@ export default {
 				return (Math.round(Math.random())) ? toRoman(str) : str;
 			},
 			onType: (text) => this.text = text,
-			onRemove: (text) => this.text = text,
-			// onChange: this.onChange
+			onRemove: (text) => this.text = text
 		});
 
 		if (this.number) {
@@ -112,5 +116,5 @@ export default {
 			}
 		}
 	}
-}
+};
 </script>

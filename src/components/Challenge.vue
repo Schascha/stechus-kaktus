@@ -75,7 +75,7 @@ export default {
 			answer: null,
 			answers: [],
 			failures: 0
-		}
+		};
 	},
 	computed: {
 		level() {
@@ -92,7 +92,7 @@ export default {
 		answer(value) {
 			this.answer = (value.match(/^[1-9][0-9]*/)) ?
 				value.replace(/[^0-9]+/, '').substr(0, 4) :
-				value.toUpperCase().replace(/[^MDCLXVI]+/, '').substr(0, 12)
+				value.toUpperCase().replace(/[^MDCLXVI]+/, '').substr(0, 12);
 		},
 		$route(to) {
 			const {id} = to.params;
@@ -113,7 +113,7 @@ export default {
 			id = parseInt(id);
 
 			if (id < 1 || id > levels.length) {
-				this.$router.replace({name: 'Challenge', params: {id: 1}})
+				this.$router.replace({name: 'Challenge', params: {id: 1}});
 			}
 		},
 		setQuestion() {
@@ -164,5 +164,5 @@ export default {
 			this.$router.push({name: 'Challenge', params: {id: parseInt(this.id) + 1}});
 		}
 	}
-}
+};
 </script>
