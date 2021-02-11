@@ -1,5 +1,6 @@
 const
 	defaults = {
+		text: '',
 		words: null,
 		delay: 2000,
 		speedTyping: 300,
@@ -17,7 +18,7 @@ export class Typewriter {
 		}
 
 		this.options = {...defaults, ...options};
-		this.text = '';
+		this.text = this.options.text || '';
 		this.timer = null;
 		this.word = null;
 	}

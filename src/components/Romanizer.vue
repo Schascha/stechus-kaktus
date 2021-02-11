@@ -64,6 +64,7 @@ export default {
 		document.body.classList.add('light');
 
 		this.typewriter = new Typewriter({
+			text: this.text,
 			words: () => {
 				const str = parseInt(Math.random() * year).toString();
 				return (Math.round(Math.random())) ? toRoman(str) : str;
