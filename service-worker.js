@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/stechus-kaktus/precache-manifest.3f213127254062bb4ebf4aea3bb80430.js"
+  "/stechus-kaktus/precache-manifest.5798c98ff8a223568e7df81b4ee4044e.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "stechus-kaktus"});
