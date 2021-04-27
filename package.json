@@ -44,7 +44,7 @@
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-standard": "^5.0.0",
     "eslint-plugin-vue": "^7.9.0",
-    "i18next-parser": "^3.7.0",
+    "i18next-parser": "^3.8.0",
     "sass": "^1.32.11",
     "sass-loader": "^10.1.1",
     "stylelint": "^13.12.0",
