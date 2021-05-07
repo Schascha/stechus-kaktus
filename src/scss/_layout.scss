@@ -107,7 +107,7 @@ select {
 }
 
 label {
-	@include visually-hidden();
+	@include sr-only();
 }
 
 main {
