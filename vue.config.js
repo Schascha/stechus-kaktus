@@ -14,7 +14,7 @@ module.exports = {
 			.plugin('html')
 			.tap(args => {
 				args[0].title = app.name;
-				args[0].meta = app.meta
+				args[0].meta = app.meta;
 				return args;
 			});
 	},
