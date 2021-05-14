@@ -1,13 +1,20 @@
+const
+	app = {
+		name: 'Stechus Kaktus – Romanizer',
+		meta: {
+			description: 'Just a simple roman numerals converter',
+			url: 'https://schascha.github.io/stechus-kaktus/'
+		}
+	}
+;
+
 module.exports = {
 	chainWebpack: (config) => {
 		config
 			.plugin('html')
 			.tap(args => {
-				args[0].title = 'Stechus Kaktus – Romanizer';
-				args[0].meta = {
-					url: 'https://schascha.github.io/stechus-kaktus/',
-					description: 'Just a simple roman numerals converter'
-				};
+				args[0].title = app.name;
+				args[0].meta = app.meta
 				return args;
 			});
 	},
@@ -37,7 +44,7 @@ module.exports = {
 		'/',
 
 	pwa: {
-		name: 'Stechus Kaktus – Romanizer',
+		name: app.name,
 		themeColor: '#C19A5B',
 		manifestOptions: {
 			background_color: '#F5EFE1',
