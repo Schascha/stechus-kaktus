@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e1bf26e0683851c73bae",
+    "revision": "e57b6fcdf1347df35f07",
     "url": "/stechus-kaktus/css/app.0c5388a6.css"
   },
   {
@@ -72,20 +72,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/stechus-kaktus/img/sharing.png"
   },
   {
-    "revision": "96d27194c34b6f3deddff2856e57254e",
+    "revision": "0925fc9be1ad3347821ebfb492a79d52",
     "url": "/stechus-kaktus/index.html"
   },
   {
-    "revision": "c8d3ccb011c50967417d",
-    "url": "/stechus-kaktus/js/Challenge.ec3b8458.js"
+    "revision": "6b5e0360ced8663836c8",
+    "url": "/stechus-kaktus/js/Challenge.2e09b3a5.js"
   },
   {
-    "revision": "72fd9af34d2990dcf09d",
-    "url": "/stechus-kaktus/js/Romanizer.1674d143.js"
+    "revision": "5c91ee38633f0f6d6f03",
+    "url": "/stechus-kaktus/js/Romanizer.056ac280.js"
   },
   {
-    "revision": "e1bf26e0683851c73bae",
-    "url": "/stechus-kaktus/js/app.51d11830.js"
+    "revision": "e57b6fcdf1347df35f07",
+    "url": "/stechus-kaktus/js/app.c5781923.js"
   },
   {
     "revision": "5eccb26a50c190b388ad",
