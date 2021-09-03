@@ -17,7 +17,7 @@ describe('Component Romanizer.vue', () => {
 		expect(wrapper.find('p').text()).toBe(toRoman(text));
 	});
 
-	it('should update text', async () => {
+	it('should update text', async() => {
 		const
 			text = 'MMXX',
 			wrapper = shallowMount(Romanizer),

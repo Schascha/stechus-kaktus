@@ -84,7 +84,7 @@ export default {
 			this.typewriter.typing();
 		}
 	},
-	destroyed () {
+	destroyed() {
 		document.body.classList.remove('light');
 		this.typewriter.clear();
 	},

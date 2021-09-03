@@ -5,9 +5,9 @@ var
 function randomInterval(min, max) {
 	let x;
 
-	do  {
+	do {
 		x = Math.floor(Math.random() * (max - min + 1) + min);
-	} while(memory.includes(x));
+	} while (memory.includes(x));
 
 	// Store the last 5 numbers
 	(memory.length >= 5) && memory.shift();

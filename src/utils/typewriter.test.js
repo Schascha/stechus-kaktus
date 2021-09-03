@@ -24,7 +24,7 @@ describe('The typewriter util', () => {
 	it('Should throw error if words option is missing', () => {
 		try {
 			new Typewriter();
-		} catch(error) {
+		} catch (error) {
 			expect(error).toBeInstanceOf(Error);
 		}
 	});
