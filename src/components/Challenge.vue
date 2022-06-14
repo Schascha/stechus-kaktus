@@ -40,10 +40,10 @@
 		</form>
 
 		<span
-			v-if="answers.length || failures"
+			v-if="success || failures"
 			class="info"
 		>
-			{{ $t('challenge.answers', {answers: answers.length, failures}) }}
+			{{ $t('challenge.answers', {success, failures}) }}
 		</span>
 		<button
 			type="button"
@@ -79,7 +79,9 @@ export default {
 			solution: null,
 			answer: null,
 			answers: [],
-			failures: 0
+			failures: 0,
+			success: 0,
+			hasHelped: false
 		};
 	},
 	computed: {
@@ -155,6 +157,11 @@ export default {
 					question: this.question,
 					answer: this.answer
 				});
+				if (this.hasHelped) {
+					this.hasHelped = false;
+				} else {
+					this.success++;
+				}
 				this.validate(true);
 				this.setQuestion();
 			} else {
@@ -164,6 +171,7 @@ export default {
 		},
 		onHelp() {
 			this.answer = this.solution;
+			this.hasHelped = true;
 		},
 		onNext() {
 			this.$router.push({name: 'Challenge', params: {id: parseInt(this.id) + 1}});
