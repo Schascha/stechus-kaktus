@@ -24,14 +24,6 @@
 			>
 
 			<button
-				type="submit"
-				:disabled="!answer"
-				@click="onClick"
-			>
-				{{ $t('button.okay') }}
-			</button>
-
-			<button
 				type="button"
 				@click="onHelp"
 			>
@@ -39,11 +31,11 @@
 			</button>
 
 			<button
-				type="button"
-				:disabled="!isNext"
-				@click="onNext"
+				type="submit"
+				:disabled="!answer"
+				@click="onClick"
 			>
-				{{ $t('button.next') }}
+				{{ $t('button.okay') }}
 			</button>
 		</form>
 
@@ -53,15 +45,28 @@
 		>
 			{{ $t('challenge.answers', {answers: answers.length, failures}) }}
 		</span>
+		<button
+			type="button"
+			class="next"
+			:disabled="!isNext"
+			@click="onNext"
+		>
+			{{ $t('button.next') }}
+			<IconArrow />
+		</button>
 	</div>
 </template>
 
 <script>
 import {toRoman} from '@/utils/roman';
 import {levels} from '@/utils/levels';
+import IconArrow from '@/assets/icons/arrow.svg?inline';
 
 export default {
 	name: 'Challenge',
+	components: {
+		IconArrow
+	},
 	props: {
 		id: {
 			type: [Number, String],
