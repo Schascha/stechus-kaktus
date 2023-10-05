@@ -11,15 +11,18 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Install dependencies 👨🏻‍💻
+        run: npm ci
+
+      - name: Run tests 🧪
+        run: npm t
+
       - name: Build 🔧
-        run: |
-          npm ci
-          npm test
-          npm run build
+        run: npm run build
 
       - name: Deploy 🚀
         if: github.ref == 'refs/heads/main'
-        uses: JamesIves/github-pages-deploy-action@v4.4.1
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: dist

@@ -17,6 +17,18 @@ module.exports = {
 				args[0].meta = app.meta;
 				return args;
 			});
+
+		// SVG
+		const svgRule = config.module.rule('svg');
+		svgRule.uses.clear();
+		svgRule.delete('type');
+		svgRule.delete('generator');
+		svgRule
+			.use('babel-loader')
+			.loader('babel-loader')
+			.end()
+			.use('vue-svg-loader')
+			.loader('vue-svg-loader');
 	},
 
 	css: {
@@ -62,7 +74,7 @@ module.exports = {
 			runtimeCaching: [
 				{
 					urlPattern: 'https://fonts.googleapis.com/.*',
-					handler: 'cacheFirst',
+					handler: 'CacheFirst',
 					method: 'GET'
 				}
 			]
