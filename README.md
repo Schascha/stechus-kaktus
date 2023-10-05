@@ -2,7 +2,7 @@
 
 # Stechus Kaktus – Romanizer
 
-[![Build](https://github.com/Schascha/stechus-kaktus/actions/workflows/build.yml/badge.svg)]](https://github.com/Schascha/stechus-kaktus/actions)
+[![Build](https://github.com/Schascha/stechus-kaktus/actions/workflows/build.yml/badge.svg)](https://github.com/Schascha/stechus-kaktus/actions)
 
 > Just a simple roman numerals converter
 
