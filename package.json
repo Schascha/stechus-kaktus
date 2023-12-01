@@ -26,7 +26,7 @@
     "vue-router": "^3.6.5"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.22.15",
+    "@babel/eslint-parser": "^7.23.3",
     "@intlify/vue-i18n-loader": "^4.0.0",
     "@schascha/eslint-config": "^0.1.0",
     "@schascha/sassy-mixins": "^0.0.6",
