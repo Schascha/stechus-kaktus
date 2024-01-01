@@ -47,7 +47,7 @@
     "eslint-plugin-standard": "^5.0.0",
     "eslint-plugin-vue": "^7.20.0",
     "i18next-parser": "^6.4.0",
-    "postcss": "^8.4.31",
+    "postcss": "^8.4.32",
     "postcss-scss": "^4.0.9",
     "sass": "^1.49.10",
     "sass-loader": "^13.3.2",
